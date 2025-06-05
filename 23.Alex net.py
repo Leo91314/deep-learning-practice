@@ -4,7 +4,7 @@ from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 from d2l import torch as d2l
 
-device = torch.device('cuda')
+device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
 class AlexNet(nn.Module):
     def __init__(self):
